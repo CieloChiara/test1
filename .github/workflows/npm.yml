@@ -20,4 +20,6 @@ jobs:
           node-version-file: 'package.json'
           registry-url: 'https://registry.npmjs.org'
       - name: 'Install node_modules'
-        run: npm ci
+        run: npm install
+      - name: npm version check
+        run: npm --version
