@@ -21,4 +21,4 @@ jobs:
           node-version: 16.15.0
           registry-url: 'https://registry.npmjs.org'
       - name: 'Install node_modules'
-        run: npm install
+        run: npm ci
