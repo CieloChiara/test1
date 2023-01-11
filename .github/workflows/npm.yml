@@ -16,9 +16,10 @@ jobs:
         with:
           persist-credentials: false
       - name: setup Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with: 
           node-version: 16.15.0
+          node-version-file: 'package.json'
           registry-url: 'https://registry.npmjs.org'
       - name: 'Install node_modules'
         run: npm ci
