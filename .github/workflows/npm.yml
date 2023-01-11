@@ -22,3 +22,5 @@ jobs:
         run: npm install
       - name: npm version check
         run: npm --version
+      - name: deploy to GitHub Pages
+        working-directory: ./sample_web
