@@ -13,9 +13,8 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
-      - name: deploy to GitHub Pages
-        working-directory: ./sample_web
       - name: setup Node
+        working-directory: ./sample_web
         uses: actions/setup-node@v1
         with: 
           node-version: 16.15.0
@@ -23,5 +22,4 @@ jobs:
       - name: 'Install node_modules'
         run: npm install
       - name: npm version check
-        run: npm --version
-        
+        run: npm --version       
