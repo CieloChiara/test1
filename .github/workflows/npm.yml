@@ -1,0 +1,24 @@
+name: KaiWai Deploy to environment
+
+on:
+  push:
+    branches:
+      - '**'
+      - '!staging'   # excludes staging
+
+jobs:
+  FrontDeploy:
+    name: FrontDeploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+      - name: setup Node
+        uses: actions/setup-node@v1
+        with: 
+          node-version: 16.15.0
+          registry-url: 'https://registry.npmjs.org'
+      - name: 'Install node_modules'
+        run: npm install
+      - name: npm version check
+        run: npm --version
