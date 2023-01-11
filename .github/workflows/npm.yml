@@ -13,13 +13,14 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
+        with:
+          persist-credentials: false
       - name: setup Node
         uses: actions/setup-node@v1
         with: 
           node-version: 16.15.0
           registry-url: 'https://registry.npmjs.org'
       - name: 'Install node_modules'
-        working-directory: ./sample_web
         run: npm install
       - name: npm version check
         run: npm --version       
